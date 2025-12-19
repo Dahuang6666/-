@@ -37,13 +37,14 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public String register(Login login) {
         try {
+            login.setCreateTime(LocalDateTime.now());
             if(login.getPermissions()!=1)
             {
+
                 loginMapper.register(login);
                 return "True";
             }
             else{
-                login.setCreateTime(LocalDateTime.now());
                 login.setPassword(md5.encrypt(login.getPassword()));
                 loginMapper.register(login);
                 return "True";

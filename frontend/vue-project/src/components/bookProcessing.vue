@@ -250,7 +250,7 @@ export default {
         name: row.name,
         author: row.author,
         count: row.count,
-        categoryId: categoryId,  // ✅ 正确的分类 ID
+        categoryId: categoryId,
       };
 
       console.log('currentBook.categoryId:', this.currentBook.categoryId);

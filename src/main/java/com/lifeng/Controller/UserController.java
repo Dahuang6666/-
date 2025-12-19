@@ -30,12 +30,11 @@ public class UserController {
     @GetMapping("/reduceCount")
     public Result reduceCount(@RequestParam  Integer count,@RequestParam Integer id) {
 
-       if(userService.reduceCount(count,id))
-       {
+       if(userService.reduceCount(count,id)) {
            return Result.success("True");
        }
        else{
-           return Result.success("Falselll");
+           return Result.success("False");
        }
        }
     //借书
